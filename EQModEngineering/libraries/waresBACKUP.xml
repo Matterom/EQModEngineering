@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+<add sel="/wares">
+    <!--Weapon Mods-->
+    <ware id="VMOD_WEAPON_DAMAGE_01_EMPTY_00_EMPTY_00" name="WDamage1" description="" shortname="" transport=""/>
+
+    <!--Engine Mods-->
+
+    <!--Ship Mods-->
+    <ware id="VMOD_SHIP_MAXHULL_01_EMPTY_00_EMPTY_00" name="Hull1" description="" shortname="" transport="inventory" volume="1" tags="equipmentmod"/>
+    <ware id="VMOD_SHIP_MAXHULL_02_EMPTY_00_EMPTY_00" name="Hull2" description="" shortname="" transport="inventory" volume="1" tags="equipmentmod"/>
+    <ware id="VMOD_SHIP_MAXHULL_03_DRAGMASS_01_EMPTY_00" name="Hull3DRAGMASS1" description="" shortname="" transport="inventory" volume="1" tags="equipmentmod"/>
+    <ware id="VMOD_SHIP_MAXHULL_04_DRAGMASS_02_EMPTY_00" name="Hull4DRAGMASS2" description="" shortname="" transport="inventory" volume="1" tags="equipmentmod"/>
+    <ware id="VMOD_SHIP_MAXHULL_05_DRAGMASS_03_RADARRANGE_01" name="Hull5DRAGMASS3Radar1" description="" shortname="" transport="inventory" volume="1" tags="equipmentmod"/>
+    <ware id="VMOD_SHIP_MAXHULL_05_DRAGMASS_03_MISSILECAPACITY_01" name="Hull5DRAGMASS3Missile1" description="" shortname="" transport="inventory" volume="1" tags="equipmentmod"/>
+    <ware id="VMOD_SHIP_MAXHULL_05_DRAGMASS_03_UNITCAPACITY_01" name="Hull5DRAGMASS3Unit1" description="" shortname="" transport="inventory" volume="1" tags="equipmentmod"/>
+
+    <!--Shield Mods-->
+</add>
+</diff>

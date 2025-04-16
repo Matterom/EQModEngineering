@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:math="http://exslt.org/math" xmlns:saxon="http://saxon.sf.net/" version="2.0" exclude-result-prefixes="math saxon"></xsl:stylesheet>

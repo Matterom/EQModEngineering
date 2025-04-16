@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="Equipment_Faction_Templates" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:\X4 modding\Loose Files\libraries\md.xsd">
+    <cues>
+        <cue name="Equipment_Template_Initialize" namespace="this" version="1">
+            <conditions>
+			<check_all>
+				<event_game_loaded />
+			</check_all>
+            </conditions>
+            <actions>
+                <!--
+                $Type
+
+
+
+                -->
+                <set_value name="global.$FactionEquipmentTemplates" exact="table[
+                    {$default] = [],
+				    {faction.player} = [],
+				    {faction.alliance} = [],
+				    {faction.antigone} = [],
+				    {faction.argon} =  [],
+				    {faction.civilian} = [],
+				    {faction.criminal} = [],
+				    {faction.hatikvah} = [],
+				    {faction.holyorder} = [],
+				    {faction.khaak} = [],
+				    {faction.ministry} = [],
+				    {faction.ownerless} = [],
+				    {faction.paranid} = [],
+				    {faction.scaleplate} = [],
+				    {faction.smuggler} = [],
+				    {faction.teladi} = [],
+				    {faction.visitor} = [],
+				    {faction.split} = [],
+				    {faction.fallensplit} = [],
+				    {faction.freesplit} = [],
+				    {faction.trinity} = [],
+				    {faction.smuggler} = [],
+				    {faction.xenon} = [],
+                ]"/>
+				
+				
+
+                <set_value name="global.$FactionEquipmentTemplates.{faction.argon}" exact="table[
+					{'$Weapons'} = table[
+						{} = table[
+						],
+					],
+					{'$Engines'} = table[
+						{macro.engine_arg_l_allround_01_mk1} = table[{'$AMod'} = 'FORWARDTHRUST', {'$BMod'} = 'BOOSTTHRUST', {'$CMod'} = 'STRAIFROLL'],
+						{macro.engine_arg_l_travel_01_mk1} = table[{'$AMod'} = 'TRAVELTHRUST', {'$BMod'} = 'FORWARDTHRUST', {'$CMod'} = 'BOOSTTHRUST'],
+						],
+					{'$Ships'} = table[
+						{macro.ship_arg_l_destroyer_01_a_macro} = table[{'$AMod'} = 'MAXHULL', {'$BMod'} = '', {'$CMod'} = ''],
+					],
+					{'$Shields'} = table[
+						{}
+					],
+                ]"/>
+            </actions>
+        </cue>
+		<cue name="Equipment_Template_CompatabilityCheck" namespace="this" version="1">
+
+		</cue>
+    </cues>
+</mdscript>

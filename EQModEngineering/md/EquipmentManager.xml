@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="Equipment_Manager" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:\X4 modding\Loose Files\libraries\md.xsd">
+    <cues>
+        <cue name="Equipment_Initialize" namespace="this" instantiate="true" version="1">
+            <conditions>
+                <event_game_loaded />
+            </conditions>
+            <actions>
+            <signal_cue_instantly cue="md.Equipment_Manager.Equipment_Processor"/>
+            <!--
+                $Type
+
+
+
+            -->
+                <!--set_value name="EquipmentModList" exact="table[
+                    $
+            
+                ]"-->
+            </actions>
+        </cue>
+        <cue name="Equipment_Processor" namespace="this" instantiate="true" version="1">
+            <conditions>
+                <event_cue_signalled />
+            </conditions>
+            <actions>
+
+                <!--set_value name="$TargetShip" exact="event.param1"/-->
+                <!--set_value name="$OwnerFaction" exact="$TargetShip.trueowner"/-->
+                <!-- Evaluate Current Ship Tier Qualification -->
+                <set_value name="$Tier" exact="table[{'$ATier'} = '05', {'$BTier'} = '03', {'$CTier'} = '01']"/>
+                <set_value name="$Types" exact="['WEAPON', 'ENGINE', 'SHIP', 'SHIELD'"/>
+
+                <!-- Weapon Tree -->
+                <set_value name="$Type" exact="'WEAPON'"/>
+                <!-- Engine Tree -->
+                <set_value name="$Type" exact="'ENGINE'"/>
+                <!-- Ship Tree -->
+                <set_value name="$Type" exact="'SHIP'"/>
+                <!--Pull Ship Template-->
+                <set_value name="$ShipTempTest" exact="table[
+                    {'$AMod'} = 'MAXHULL',
+                    {'$BMod'} = 'DRAGMASS',
+                    {'$CMod'} = 'RADARRANGE'
+                ]"/>
+                <!--Evaluate Template and knock down to relative Tier-->
+                <debug_text text="'Tier table ' + $Tier + ' ShipTable ' + $ShipTempTest " chance="100" filter="general"/>
+                <do_if value="$Tier.$CTier == '00'">
+                    <set_value name="$ShipTempTest.$CMod" exact="empty"/>
+                </do_if>
+                <do_if value="$Tier.$BTier == '00'">
+                    <set_value name="$ShipTempTest.$BMod" exact="empty"/>
+                </do_if>
+                <!--Build Ware String-->
+
+                <substitute_text text="$WareTarget" source="{1267,1}" comment="Insanity">
+                    <replace string="'$Type$'" with="$Type"/>
+                    <replace string="'$AMod$'" with="$ShipTempTest.$AMod"/>
+                    <replace string="'$ATier$'" with="$Tier.$ATier"/>
+                    <replace string="'$BMod$'" with="$ShipTempTest.$BMod"/>
+                    <replace string="'$BTier$'" with="$Tier.$BTier"/>
+                    <replace string="'$CMod$'" with="$ShipTempTest.$CMod"/>
+                    <replace string="'$CTier$'" with="$Tier.$CTier"/>
+                </substitute_text>
+                <!--Apply Ware To Target Ship-->
+                <do_if value="ware.{$WareTarget}?">
+                    <debug_text text="'Ware Found as ' + $WareTarget" chance="100" filter="general"/>
+                </do_if>
+                <do_else>
+                    <debug_text text="'Ware Not Found as ' + $WareTarget" chance="100" filter="general"/>
+                </do_else>
+
+
+                <!--do_if value="">
+            
+                </do_if>
+                <do_elseif>
+                </do_elseif>
+                <do_else>
+                    <debug_text text="No Template, or General Found" context="false" filter="error"/>
+                </do_else-->
+                <!-- Shield Tree -->
+                <set_value name="$Type" exact="'SHIELD'"/>
+
+
+            </actions>
+        </cue>
+    </cues>
+</mdscript>

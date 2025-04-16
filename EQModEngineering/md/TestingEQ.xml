@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mdscript name="EQTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:\X4 modding\Loose Files\libraries\md.xsd">
+	<cues>
+		<!--cue name="FindShipMods" instantiate="true" namespace="this">
+			<conditions>
+				<event_game_loaded />
+			</conditions>
+			<actions>
+				<!-<findext_ship name="$ks" multiple="true">
+					<match job="xenon_destroyer_patrol_xl_cluster"/>
+				</findext_ship>
+				<findext_ship name="$is" multiple="true">
+					<match job="xenon_carrier_patrol_xl_zone_defence"/>
+				</findext_ship>
+				
+				<debug_text text="$ks.count" chance="100" filter="general"/>
+				<debug_text text="$is.count" chance="100" filter="general"/>->
+				
+				<find_ship name="$ships" multiple="true">
+					<match_any_equipment_mod/>
+				</find_ship>
+				<debug_text text="$ships.count" filter="general"/>
+				<do_all exact="$ships.count" counter="$a">
+					<set_value name="$ship" exact="$ships.{$a}"/>
+					<do_if value="$ship.hasshipmod or $ship.hasweaponmod or $ship.hasshieldmod or $ship.hasenginemod">
+						<debug_text text="'===|EQTEST|=== Ship Name:' + $ship.knownname + ' ShipMod? =' + $ship.hasshipmod + ' WepMod? =' + $ship.hasweaponmod + ' ShieldMod? =' + $ship.hasshieldmod + ' EngMod? =' + $ship.hasenginemod + ' Ship Wares:' + $ship.wares.list" chance="100" filter="general"/>
+						<find_object_component object="$ship" name="$components" multiple="true" />
+						<do_all exact="$components.count" counter="$b">
+							<set_value name="$component" exact="$components.{$b}"/>
+							<debug_text text="'===|EQTEST|=== Component Name: ' + $component.name + ' wares? ' + $component.waretransport" chance="100" filter="general"/>
+							<find_object_component object="$component" name="$recusion1" multiple="true" />
+							<do_all exact="$recusion1.count" counter="$c">
+								<set_value name="$recurs" exact="$recusion1.{$c}"/>
+								<debug_text text="'===|EQTEST|=== Component Name: ' + $recurs.name + ' wares? ' + $recurs.waretransport" chance="100" filter="general"/>
+							</do_all>
+						</do_all>
+						<find_object_component object="$ship" name="$eq" multiple="true">
+							<match_any_equipment_mod/>
+						</find_object_component>
+						<do_all exact="$eq.count" counter="$c">
+							<debug_text text="'===|EQTEST|=== EQ:' + $eq.{c} "/>
+						</do_all>
+					</do_if>
+					<remove_value name="$ship"/>
+				</do_all>
+				
+			</actions>
+		</cue-->
+	</cues>
+</mdscript>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mdscript name="ModuleManager" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="L:\SteamLibrary\steamapps\common\X4 Foundations\Loose Files\md\md.xsd">
+	<cues>
+        <cue name="ModuleArrayInit">
+			<conditions>
+				<check_any>
+					<event_game_started/>
+					<check_all>
+						<event_game_loaded/>
+						<check_any>
+							<check_value value="not global.$ModulesInitialized?"/>
+							<check_value value="global.$ModulesInitialized? lt 1"/>
+						</check_any>
+					</check_all>
+				</check_any>
+			</conditions>
+            <actions>
+                <set_value name="$debugchance" exact="100"/>
+				<!--set_value name="global.$StationDefinitions" exact="table[
+				{'$slot'}
+				]"/-->
+
+
+                <set_value name="global.$ModuleArray" exact="table[
+				{'$EngiSch'} = table[{'$flags'} = ['$engineer'], {'$type'} = {'$SCHOOL'}, {$tier} = 1],
+				{'$PilotSch'} = table[{'$flags'} = ['$piloting'], {'$type'} = {'$SCHOOL'}, {$tier} = 1],
+				{'$ManSch'} = table[{'$flags'} = ['$management'], {'$type'} = '{'$SCHOOL'}, {$tier} = 1],
+				{'$BoardSch'} = table[{'$flags'} = ['$boarding'], {'$type'} = {'$SCHOOL'}, {$tier} = 1],
+				{'$Bar'} = table[{'$flags'} = ['$moral'], {'$type'} = {'$BUISNESS'}, {$tier} = 1],
+				{'$Club'} = table[{'$flags'} = ['$moral'], {'$type'} = {'$BUISNESS'}, {$tier} = 2],
+				{'$Casino'} = table[{'$flags'} = ['$moral, $gamble'], {'$type'} = {'$BUISNESS'}, {$tier} = 3],
+				{'$EngiSch'} = table[{'$flags'} = ['$engineer'], {'$type'} = {'$SCHOOL'}, {$tier} = 1],
+				{'$EngiSch'} = table[{'$flags'} = ['$engineer'], {'$type'} = {'$SCHOOL'}, {$tier} = 1],
+				{'$EngiSch'} = table[{'$flags'} = ['$engineer'], {'$type'} = {'$SCHOOL'}, {$tier} = 1],			
+				]"/>
+				
+				<set_value name="global.$EQModArray" exact="table[
+				
+				
+				
+				]"/>
+            </actions>
+        </cue>
+    </cues>
+</mdscript>

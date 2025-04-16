@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="Equipment_Menu" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:\X4 modding\Loose Files\libraries\md.xsd">
+    <cues>
+        <cue name="Register_options_menu" instantiate="true" version="1">
+            <conditions>
+                <event_cue_signalled cue="md.Simple_Menu_API.Reloaded"/>
+            </conditions>
+            <actions>
+                <signal_cue_instantly cue="md.Simple_Menu_API.Register_Options_Menu" param="table[$id = '']"/>
+            </actions>
+        </cue>
+    </cues>
+</mdscript>

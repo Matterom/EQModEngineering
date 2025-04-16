@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<language id="44">
+<page id="1267" title="EngineeringEnhanced_Modifications" descr="Modification Trees and Descriptions" voice="no">
+    <!-- ID =  Tier A# || Tier B# || Tier C# ||  0 Name/ 1 Description -->
+    <t id="1">Vmod_$Type$_$AMod$_$ATier$_$BMod$_$BTier$_$CMod$_$CTier$</t>
+    <t id="1100000">Hull Reinforcement</t>
+    <t id="1100001">Description</t>
+    <t id="1200000">Armor Plating</t>
+    <t id="1200001">Description</t>
+    <t id="1321000">Field Integrity Overhaul With Spacial Dynamics Overhaul</t>
+    <t id="1321001">Description</t>
+    <t id="1422000">Nano Diamond Ceramic With Shaped Inertial Fields</t>
+    <t id="1422001">Description</t>
+</page>
+</language>
